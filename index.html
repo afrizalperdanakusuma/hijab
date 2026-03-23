@@ -3,32 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hijab Shila - Elegan tetap Syar'i</title>
+  <title>Humaira Syari Official - Menutup Aurat dengan Anggun</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            amber: {
-              50: '#FFFBEB',
-              100: '#FEF3C7',
-              200: '#FDE68A',
-              300: '#FCD34D',
-              400: '#FBBF24',
-              500: '#F59E0B',
-              600: '#D97706',
-              700: '#B45309',
-              800: '#92400E',
-              900: '#78350F',
+            rose: {
+              primary: '#B76E79',
+              deep: '#8B4B5A',
+              soft: '#E8B4B8',
+              blush: '#FDF2F4',
+              cream: '#FDF8F5',
+              muted: '#D4A5A9'
+            },
+            text: {
+              dark: '#3D2C2E',
+              body: '#5C4A4D',
+              light: '#8A7577'
             }
           },
           fontFamily: {
-            display: ['Playfair Display', 'serif'],
-            body: ['DM Sans', 'sans-serif'],
+            display: ['Cormorant Garamond', 'serif'],
+            body: ['DM Sans', 'sans-serif']
           }
         }
       }
@@ -36,29 +38,122 @@
   </script>
   <style>
     :root {
-      --primary: #D97706;
-      --primary-light: #F59E0B;
-      --primary-dark: #92400E;
-      --bg-cream: #FDF8F3;
-      --bg-warm: #FEF7ED;
-      --text-dark: #422006;
-      --text-muted: #78350F;
+      --bg: #FDF8F5;
+      --fg: #3D2C2E;
+      --muted: #8A7577;
+      --accent: #B76E79;
+      --accent-deep: #8B4B5A;
+      --card: #FFFFFF;
+      --border: #E8B4B8;
+      --soft: #FDF2F4;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
     body {
       font-family: 'DM Sans', sans-serif;
-      background: var(--bg-cream);
-      color: var(--text-dark);
+      background: var(--bg);
+      color: var(--fg);
     }
 
     .font-display {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Cormorant Garamond', serif;
     }
 
+    /* Hero gradient */
+    .hero-gradient {
+      background: linear-gradient(135deg, #FDF2F4 0%, #FCECEE 25%, #F9E5E8 50%, #FDF2F4 75%, #FDF8F5 100%);
+    }
+
+    /* Decorative blob */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .blob-1 {
+      width: 400px;
+      height: 400px;
+      background: linear-gradient(180deg, #E8B4B8 0%, #D4A5A9 100%);
+      top: -100px;
+      right: -100px;
+    }
+
+    .blob-2 {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(180deg, #F5D5D8 0%, #E8B4B8 100%);
+      bottom: -50px;
+      left: -50px;
+    }
+
+    /* Product card hover */
+    .product-card {
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgba(183, 110, 121, 0.25);
+    }
+
+    .product-image {
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .product-card:hover .product-image {
+      transform: scale(1.08);
+    }
+
+    /* Button hover */
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px -10px rgba(139, 75, 90, 0.5);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    /* Fade in animation */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -70,509 +165,798 @@
       }
     }
 
-    @keyframes floatSoft {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-8px);
-      }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
-    @keyframes pulse-glow {
-      0%, 100% {
-        box-shadow: 0 0 20px rgba(217, 119, 6, 0.3);
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
       }
-      50% {
-        box-shadow: 0 0 40px rgba(217, 119, 6, 0.5);
+      to {
+        opacity: 1;
+        transform: translateX(0);
       }
     }
 
     .animate-fade-in-up {
-      animation: fadeInUp 0.6s ease-out forwards;
-      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
     }
 
-    .animate-float {
-      animation: floatSoft 4s ease-in-out infinite;
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease forwards;
     }
 
-    .delay-100 { animation-delay: 0.1s; }
-    .delay-200 { animation-delay: 0.2s; }
-    .delay-300 { animation-delay: 0.3s; }
-    .delay-400 { animation-delay: 0.4s; }
-    .delay-500 { animation-delay: 0.5s; }
-
-    .bg-warm-pattern {
-      background-image: 
-        radial-gradient(circle at 20% 80%, rgba(251, 191, 36, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(217, 119, 6, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.08) 0%, transparent 40%);
+    .animate-slide-in {
+      animation: slideInLeft 0.6s ease forwards;
     }
 
-    .product-card {
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+    .stagger-1 { animation-delay: 0.1s; opacity: 0; }
+    .stagger-2 { animation-delay: 0.2s; opacity: 0; }
+    .stagger-3 { animation-delay: 0.3s; opacity: 0; }
+    .stagger-4 { animation-delay: 0.4s; opacity: 0; }
+    .stagger-5 { animation-delay: 0.5s; opacity: 0; }
+    .stagger-6 { animation-delay: 0.6s; opacity: 0; }
 
-    .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 50px -12px rgba(217, 119, 6, 0.25);
-    }
-
-    .product-card:hover .product-image {
-      transform: scale(1.08);
-    }
-
-    .product-image {
-      transition: transform 0.5s ease;
-      object-fit: cover;
-    }
-
-    .btn-wa {
-      background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
-      transition: all 0.3s ease;
-      position: relative;
+    /* FAQ accordion */
+    .faq-content {
+      max-height: 0;
       overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
     }
 
-    .btn-wa::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: left 0.5s ease;
+    .faq-item.active .faq-content {
+      max-height: 200px;
     }
 
-    .btn-wa:hover::before {
-      left: 100%;
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
     }
 
-    .btn-wa:hover {
-      transform: scale(1.02);
-      box-shadow: 0 10px 30px -5px rgba(217, 119, 6, 0.5);
+    .faq-icon {
+      transition: transform 0.3s ease;
     }
 
-    .btn-wa:active {
-      transform: scale(0.98);
+    /* Cart badge bounce */
+    @keyframes bounce {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
     }
 
-    .floating-wa {
-      animation: pulse-glow 2s ease-in-out infinite;
+    .cart-bounce {
+      animation: bounce 0.3s ease;
     }
 
-    .decorative-blob {
-      filter: blur(60px);
-      pointer-events: none;
+    /* Testimonial card */
+    .testimonial-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px -15px rgba(183, 110, 121, 0.2);
     }
 
-    .focus-ring:focus {
-      outline: 2px solid var(--primary);
+    /* Focus states */
+    .focus-ring:focus-visible {
+      outline: 2px solid var(--accent);
       outline-offset: 2px;
     }
 
-    .badge {
-      background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
     }
 
-    .scroll-reveal {
+    ::-webkit-scrollbar-track {
+      background: var(--soft);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent);
+    }
+
+    /* Floating cart */
+    .floating-cart {
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+    }
+
+    .floating-cart.hidden-cart {
+      transform: translateY(100px);
       opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .scroll-reveal.revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .image-skeleton {
-      background: linear-gradient(90deg, #FEF3C7 0%, #FDE68A 50%, #FEF3C7 100%);
-      background-size: 200% 100%;
-      animation: shimmer 1.5s infinite;
-    }
-
-    @keyframes shimmer {
-      0% { background-position: -200% 0; }
-      100% { background-position: 200% 0; }
-    }
-
-    .product-img-wrapper {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .product-img-wrapper::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(120, 53, 15, 0.15) 0%, transparent 50%);
       pointer-events: none;
+    }
+
+    /* Pattern background */
+    .pattern-bg {
+      background-image: radial-gradient(#E8B4B8 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    /* Quantity button */
+    .qty-btn {
+      transition: background 0.2s ease, transform 0.1s ease;
+    }
+
+    .qty-btn:active {
+      transform: scale(0.95);
     }
   </style>
 </head>
-<body class="min-h-screen bg-warm-pattern">
-  <!-- Decorative Background Elements -->
-  <div class="fixed inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-    <div class="decorative-blob absolute -top-32 -right-32 w-96 h-96 bg-amber-300 opacity-20 animate-float"></div>
-    <div class="decorative-blob absolute top-1/2 -left-48 w-80 h-80 bg-amber-400 opacity-15 animate-float" style="animation-delay: 2s;"></div>
-    <div class="decorative-blob absolute bottom-20 right-1/4 w-64 h-64 bg-amber-200 opacity-20 animate-float" style="animation-delay: 1s;"></div>
-  </div>
-
-  <!-- Header -->
-  <header class="relative z-10 py-6 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-6xl mx-auto">
-      <div class="flex items-center justify-between">
-        <div class="animate-fade-in-up">
-          <h1 class="font-display text-2xl sm:text-3xl font-bold text-amber-800 tracking-tight">Hijab Shila</h1>
-          <p class="text-amber-600 text-sm sm:text-base font-medium mt-0.5">Elegan tetap Syar'i</p>
-        </div>
-        <nav class="animate-fade-in-up delay-200 hidden sm:flex items-center gap-6">
-          <a href="#produk" class="text-amber-700 hover:text-amber-900 font-medium transition-colors focus-ring rounded px-2 py-1">Produk</a>
-          <a href="#tentang" class="text-amber-700 hover:text-amber-900 font-medium transition-colors focus-ring rounded px-2 py-1">Tentang</a>
-        </nav>
-        <a href="https://wa.me/6282332251041" target="_blank" rel="noopener noreferrer" 
-           class="animate-fade-in-up delay-300 sm:hidden bg-amber-600 text-white px-4 py-2 rounded-full font-medium text-sm focus-ring"
-           aria-label="Hubungi via WhatsApp">
-          Hubungi
+<body class="min-h-screen">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-rose-cream/90 backdrop-blur-md border-b border-rose-soft/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <a href="#" class="flex items-center gap-2 sm:gap-3 focus-ring rounded-lg">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-rose-primary to-rose-deep flex items-center justify-center">
+            <i data-lucide="sparkles" class="w-4 h-4 sm:w-5 sm:h-5 text-white"></i>
+          </div>
+          <div>
+            <h1 class="font-display text-lg sm:text-xl font-bold text-text-dark leading-tight">Humaira Syari</h1>
+            <p class="text-[10px] sm:text-xs text-text-light tracking-wide">OFFICIAL</p>
+          </div>
         </a>
+
+        <div class="flex items-center gap-2 sm:gap-4">
+          <a href="#produk" class="hidden sm:block text-text-body hover:text-rose-primary transition-colors font-medium focus-ring rounded-lg px-2 py-1">
+            Produk
+          </a>
+          <a href="#testimoni" class="hidden sm:block text-text-body hover:text-rose-primary transition-colors font-medium focus-ring rounded-lg px-2 py-1">
+            Testimoni
+          </a>
+          <a href="#faq" class="hidden sm:block text-text-body hover:text-rose-primary transition-colors font-medium focus-ring rounded-lg px-2 py-1">
+            FAQ
+          </a>
+          
+          <button id="cartToggle" class="relative p-2 sm:p-3 rounded-full bg-white shadow-sm hover:shadow-md transition-all focus-ring border border-rose-soft/50" aria-label="Keranjang belanja">
+            <i data-lucide="shopping-bag" class="w-5 h-5 sm:w-6 sm:h-6 text-rose-primary"></i>
+            <span id="cartCount" class="absolute -top-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 bg-rose-deep text-white text-xs font-bold rounded-full flex items-center justify-center">0</span>
+          </button>
+        </div>
       </div>
     </div>
-  </header>
+  </nav>
 
   <!-- Hero Section -->
-  <section class="relative z-10 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-6xl mx-auto text-center">
-      <div class="animate-fade-in-up">
-        <span class="inline-block badge text-amber-900 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-4 sm:mb-6">
-          Koleksi Terbaru 2024
-        </span>
+  <section class="hero-gradient relative overflow-hidden pt-20 sm:pt-24 pb-12 sm:pb-20">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <!-- Promo Banner -->
+      <div class="animate-fade-in-up stagger-1 bg-gradient-to-r from-rose-deep to-rose-primary rounded-2xl sm:rounded-3xl p-4 sm:p-6 mb-8 sm:mb-12 text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-1/4 w-20 h-20 bg-white/5 rounded-full translate-y-1/2"></div>
+        <div class="relative flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="text-center sm:text-left">
+            <span class="inline-block px-3 py-1 bg-white/20 rounded-full text-xs sm:text-sm font-medium mb-2">PROMO SPESIAL</span>
+            <h2 class="font-display text-xl sm:text-2xl lg:text-3xl font-bold">Diskon Hingga 20% untuk Pembelian Pertama</h2>
+            <p class="text-white/80 text-sm sm:text-base mt-1">Gunakan kode: HUMAIRA20 saat checkout</p>
+          </div>
+          <a href="#produk" class="btn-primary whitespace-nowrap bg-white text-rose-deep px-6 py-3 rounded-xl font-semibold hover:bg-rose-blush transition-colors focus-ring">
+            Belanja Sekarang
+          </a>
+        </div>
       </div>
-      <h2 class="animate-fade-in-up delay-100 font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-amber-900 leading-tight mb-4 sm:mb-6">
-        Pilihan Hijab Berkualitas<br class="hidden sm:block"> 
-        <span class="text-amber-600">untuk Muslimah Modern</span>
-      </h2>
-      <p class="animate-fade-in-up delay-200 text-amber-700 text-base sm:text-lg lg:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
-        Temukan koleksi pashmina dan tunik elegan yang nyaman dipakai sehari-hari. 
-        Bahan premium dengan harga terjangkau.
-      </p>
-      <div class="animate-fade-in-up delay-300 flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="#produk" class="btn-wa text-white px-8 py-3.5 rounded-full font-semibold text-base sm:text-lg focus-ring inline-flex items-center gap-2">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-          </svg>
-          Lihat Koleksi
-        </a>
-        <a href="https://wa.me/6282332251041?text=Halo%20Kak,%20saya%20ingin%20bertanya%20tentang%20produk" 
-           target="_blank" rel="noopener noreferrer"
-           class="text-amber-700 hover:text-amber-900 font-semibold text-base sm:text-lg transition-colors focus-ring rounded px-4 py-3 inline-flex items-center gap-2">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-          Tanya via WhatsApp
-        </a>
+
+      <!-- Hero Content -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div class="text-center lg:text-left">
+          <p class="animate-fade-in-up stagger-1 text-rose-primary font-medium tracking-wider uppercase text-sm sm:text-base mb-3 sm:mb-4">Koleksi Syari Premium</p>
+          <h1 class="animate-fade-in-up stagger-2 font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-text-dark leading-tight mb-4 sm:mb-6">
+            Menutup Aurat dengan <span class="text-rose-primary">Anggun</span> dan <span class="text-rose-deep">Nyaman</span>
+          </h1>
+          <p class="animate-fade-in-up stagger-3 text-text-body text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0">
+            Temukan koleksi busana muslim premium yang dirancang untuk kenyamanan dan kesopanan. Kualitas terjamin, harga terjangkau.
+          </p>
+          <div class="animate-fade-in-up stagger-4 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+            <a href="#produk" class="btn-primary bg-rose-deep text-white px-8 py-4 rounded-xl font-semibold text-base sm:text-lg focus-ring">
+              Lihat Koleksi
+            </a>
+            <a href="https://wa.me/628123456789?text=Halo%20Humaira%20Syari%2C%20saya%20ingin%20bertanya%20tentang%20produk" target="_blank" class="bg-white text-rose-deep border-2 border-rose-soft px-8 py-4 rounded-xl font-semibold text-base sm:text-lg hover:border-rose-primary hover:bg-rose-blush transition-all focus-ring flex items-center justify-center gap-2">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              Hubungi Kami
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Image Grid -->
+        <div class="animate-fade-in stagger-5 relative">
+          <div class="grid grid-cols-2 gap-3 sm:gap-4">
+            <div class="space-y-3 sm:space-y-4">
+              <div class="rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl aspect-[3/4] bg-rose-blush">
+                <img src="https://images.unsplash.com/photo-1631233859262-0d7e8d4b9a8b?w=400&h=533&fit=crop&crop=center" alt="Model hijab elegant" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg aspect-square bg-rose-soft/30">
+                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&h=400&fit=crop" alt="Hijab collection" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+            </div>
+            <div class="space-y-3 sm:space-y-4 pt-6 sm:pt-8">
+              <div class="rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg aspect-square bg-rose-soft/30">
+                <img src="https://images.unsplash.com/photo-1611042553484-d61f84d22784?w=400&h=400&fit=crop" alt="Premium hijab" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl aspect-[3/4] bg-rose-blush">
+                <img src="https://images.unsplash.com/photo-1590651121899-92f3ce089c4c?w=400&h=533&fit=crop&crop=center" alt="Syar'i fashion" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Floating Badge -->
+          <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-white rounded-xl sm:rounded-2xl shadow-xl px-4 sm:px-6 py-3 sm:py-4 flex items-center gap-3 sm:gap-4">
+            <div class="flex -space-x-2">
+              <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-rose-soft border-2 border-white overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Customer" class="w-full h-full object-cover">
+              </div>
+              <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-rose-soft border-2 border-white overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Customer" class="w-full h-full object-cover">
+              </div>
+              <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-rose-soft border-2 border-white overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Customer" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="text-left">
+              <div class="flex items-center gap-1">
+                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                <span class="font-bold text-text-dark text-sm sm:text-base">4.9</span>
+              </div>
+              <p class="text-text-light text-xs sm:text-sm">2.5k+ Ulasan</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Products Section -->
-  <section id="produk" class="relative z-10 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-10 sm:mb-14">
-        <h3 class="scroll-reveal font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-amber-900 mb-3">Koleksi Unggulan</h3>
-        <p class="scroll-reveal text-amber-600 text-base sm:text-lg">Pilihan terbaik untuk tampilan cantik dan sopan</p>
+  <section id="produk" class="py-16 sm:py-24 bg-white relative">
+    <div class="pattern-bg absolute inset-0 opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center mb-10 sm:mb-16">
+        <span class="inline-block px-4 py-1.5 bg-rose-blush text-rose-primary rounded-full text-sm font-medium mb-3 sm:mb-4">Koleksi Kami</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-dark mb-3 sm:mb-4">Produk Unggulan</h2>
+        <p class="text-text-body text-base sm:text-lg max-w-2xl mx-auto">Dipilih dengan teliti untuk memastikan kualitas dan kenyamanan terbaik bagi Anda</p>
       </div>
 
-      <!-- Product Grid -->
-      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8" id="product-grid">
-        <!-- Products will be rendered by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section id="tentang" class="relative z-10 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-amber-50/50">
-    <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-        <div class="scroll-reveal bg-white/60 backdrop-blur-sm rounded-2xl p-6 text-center border border-amber-100 hover:border-amber-200 transition-colors">
-          <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-          </div>
-          <h4 class="font-semibold text-amber-900 text-lg mb-2">Bahan Premium</h4>
-          <p class="text-amber-600 text-sm">Material berkualitas tinggi, nyaman dan tahan lama</p>
-        </div>
-
-        <div class="scroll-reveal bg-white/60 backdrop-blur-sm rounded-2xl p-6 text-center border border-amber-100 hover:border-amber-200 transition-colors">
-          <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-          </div>
-          <h4 class="font-semibold text-amber-900 text-lg mb-2">Harga Terjangkau</h4>
-          <p class="text-amber-600 text-sm">Kualitas premium dengan harga bersahabat</p>
-        </div>
-
-        <div class="scroll-reveal bg-white/60 backdrop-blur-sm rounded-2xl p-6 text-center border border-amber-100 hover:border-amber-200 transition-colors">
-          <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-            </svg>
-          </div>
-          <h4 class="font-semibold text-amber-900 text-lg mb-2">Pengiriman Cepat</h4>
-          <p class="text-amber-600 text-sm">Proses order cepat, packing aman dan rapi</p>
-        </div>
-
-        <div class="scroll-reveal bg-white/60 backdrop-blur-sm rounded-2xl p-6 text-center border border-amber-100 hover:border-amber-200 transition-colors">
-          <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-            </svg>
-          </div>
-          <h4 class="font-semibold text-amber-900 text-lg mb-2">Ramah Customer</h4>
-          <p class="text-amber-600 text-sm">Pelayanan responsif dan siap membantu</p>
-        </div>
+      <div id="productGrid" class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <!-- Products will be rendered here -->
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="relative z-10 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto">
-      <div class="scroll-reveal bg-gradient-to-br from-amber-600 to-amber-800 rounded-3xl p-8 sm:p-10 lg:p-12 text-center relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10" aria-hidden="true">
-          <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <pattern id="pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-              <circle cx="1" cy="1" r="1" fill="white"/>
-            </pattern>
-            <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern)"/>
-          </svg>
-        </div>
-        <div class="relative">
-          <h3 class="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">Siap Tampil Lebih Elegan?</h3>
-          <p class="text-amber-100 text-base sm:text-lg mb-6 sm:mb-8 max-w-xl mx-auto">
-            Pesan sekarang melalui WhatsApp. Fast response dan pelayanan terbaik untuk Anda.
-          </p>
-          <a href="https://wa.me/6282332251041?text=Halo%20Kak,%20saya%20ingin%20pesan%20hijab" 
-             target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-3 bg-white text-amber-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-50 transition-colors focus-ring shadow-lg">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            Pesan Sekarang
-          </a>
-        </div>
+  <!-- Testimonials Section -->
+  <section id="testimoni" class="py-16 sm:py-24 bg-gradient-to-b from-rose-blush to-rose-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10 sm:mb-16">
+        <span class="inline-block px-4 py-1.5 bg-white text-rose-primary rounded-full text-sm font-medium mb-3 sm:mb-4">Testimoni</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-dark mb-3 sm:mb-4">Kata Mereka</h2>
+        <p class="text-text-body text-base sm:text-lg max-w-2xl mx-auto">Ribuan pelanggan telah mempercayakan kebutuhan busana muslim mereka kepada kami</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="testimonialGrid">
+        <!-- Testimonials will be rendered here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10 sm:mb-16">
+        <span class="inline-block px-4 py-1.5 bg-rose-blush text-rose-primary rounded-full text-sm font-medium mb-3 sm:mb-4">FAQ</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-dark mb-3 sm:mb-4">Pertanyaan Umum</h2>
+        <p class="text-text-body text-base sm:text-lg">Temukan jawaban untuk pertanyaan yang sering diajukan</p>
+      </div>
+
+      <div class="space-y-4" id="faqContainer">
+        <!-- FAQ items will be rendered here -->
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="relative z-10 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 border-t border-amber-100">
-    <div class="max-w-6xl mx-auto text-center">
-      <h4 class="font-display text-xl sm:text-2xl font-bold text-amber-800 mb-2">Hijab Shila</h4>
-      <p class="text-amber-600 text-sm sm:text-base mb-4">Elegan tetap Syar'i</p>
-      <div class="flex items-center justify-center gap-4 text-amber-500 text-sm">
-        <a href="https://wa.me/6282332251041" target="_blank" rel="noopener noreferrer" class="hover:text-amber-700 transition-colors focus-ring rounded px-2 py-1">
-          WhatsApp
-        </a>
-        <span aria-hidden="true">|</span>
-        <span>0823-3225-1041</span>
+  <footer class="bg-rose-deep text-white py-12 sm:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+        <div class="sm:col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-3 mb-4 sm:mb-6">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 flex items-center justify-center">
+              <i data-lucide="sparkles" class="w-5 h-5 sm:w-6 sm:h-6 text-white"></i>
+            </div>
+            <div>
+              <h3 class="font-display text-xl sm:text-2xl font-bold">Humaira Syari</h3>
+              <p class="text-white/60 text-xs sm:text-sm">OFFICIAL</p>
+            </div>
+          </div>
+          <p class="text-white/80 text-sm sm:text-base mb-4 sm:mb-6">Menutup Aurat dengan Anggun dan Nyaman. Koleksi busana muslim premium untuk muslimah modern.</p>
+          <div class="flex gap-3 sm:gap-4">
+            <a href="#" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors focus-ring" aria-label="Instagram">
+              <i data-lucide="instagram" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+            </a>
+            <a href="#" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors focus-ring" aria-label="Facebook">
+              <i data-lucide="facebook" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+            </a>
+            <a href="https://wa.me/628123456789" target="_blank" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors focus-ring" aria-label="WhatsApp">
+              <i data-lucide="message-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-base sm:text-lg mb-4 sm:mb-6">Navigasi</h4>
+          <ul class="space-y-2 sm:space-y-3">
+            <li><a href="#produk" class="text-white/70 hover:text-white transition-colors text-sm sm:text-base">Produk</a></li>
+            <li><a href="#testimoni" class="text-white/70 hover:text-white transition-colors text-sm sm:text-base">Testimoni</a></li>
+            <li><a href="#faq" class="text-white/70 hover:text-white transition-colors text-sm sm:text-base">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-base sm:text-lg mb-4 sm:mb-6">Kategori</h4>
+          <ul class="space-y-2 sm:space-y-3">
+            <li><a href="#" class="text-white/70 hover:text-white transition-colors text-sm sm:text-base">Hijab & Khimar</a></li>
+            <li><a href="#" class="text-white/70 hover:text-white transition-colors text-sm sm:text-base">Gamis & Dress</a></li>
+            <li><a href="#" class="text-white/70 hover:text-white transition-colors text-sm sm:text-base">Aksesoris</a></li>
+            <li><a href="#" class="text-white/70 hover:text-white transition-colors text-sm sm:text-base">Paket Hemat</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-base sm:text-lg mb-4 sm:mb-6">Kontak</h4>
+          <ul class="space-y-3 sm:space-y-4">
+            <li class="flex items-center gap-3">
+              <i data-lucide="phone" class="w-4 h-4 sm:w-5 sm:h-5 text-rose-soft"></i>
+              <a href="https://wa.me/628123456789" class="text-white/70 hover:text-white transition-colors text-sm sm:text-base">0812-3456-789</a>
+            </li>
+            <li class="flex items-center gap-3">
+              <i data-lucide="mail" class="w-4 h-4 sm:w-5 sm:h-5 text-rose-soft"></i>
+              <a href="mailto:hello@humairasyari.com" class="text-white/70 hover:text-white transition-colors text-sm sm:text-base">hello@humairasyari.com</a>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-4 h-4 sm:w-5 sm:h-5 text-rose-soft mt-0.5"></i>
+              <span class="text-white/70 text-sm sm:text-base">Jl. Moda Muslim No. 88, Jakarta Selatan</span>
+            </li>
+          </ul>
+        </div>
       </div>
-      <p class="text-amber-400 text-xs mt-6">Hijab Shila 2024. Semua hak dilindungi.</p>
+
+      <div class="border-t border-white/10 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center">
+        <p class="text-white/60 text-xs sm:text-sm">2024 Humaira Syari Official. Hak Cipta Dilindungi.</p>
+      </div>
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/6282332251041?text=Halo%20Kak,%20saya%20ingin%20bertanya%20tentang%20produk" 
-     target="_blank" rel="noopener noreferrer"
-     class="floating-wa fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 focus-ring"
-     aria-label="Hubungi via WhatsApp">
-    <svg class="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </a>
+  <!-- Floating Cart -->
+  <div id="floatingCart" class="floating-cart hidden-cart fixed bottom-4 sm:bottom-6 right-4 sm:right-6 left-4 sm:left-auto sm:w-96 bg-white rounded-2xl shadow-2xl border border-rose-soft/50 z-50 overflow-hidden">
+    <div class="p-4 sm:p-5 border-b border-rose-soft/50 flex items-center justify-between bg-gradient-to-r from-rose-blush to-white">
+      <div class="flex items-center gap-2 sm:gap-3">
+        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-rose-primary flex items-center justify-center">
+          <i data-lucide="shopping-bag" class="w-4 h-4 sm:w-5 sm:h-5 text-white"></i>
+        </div>
+        <div>
+          <h3 class="font-semibold text-text-dark text-sm sm:text-base">Keranjang</h3>
+          <p class="text-text-light text-xs sm:text-sm" id="cartItemCount">0 item</p>
+        </div>
+      </div>
+      <button id="closeCart" class="p-1.5 sm:p-2 hover:bg-rose-soft/30 rounded-lg transition-colors focus-ring" aria-label="Tutup keranjang">
+        <i data-lucide="x" class="w-4 h-4 sm:w-5 sm:h-5 text-text-light"></i>
+      </button>
+    </div>
+
+    <div id="cartItems" class="max-h-60 sm:max-h-72 overflow-y-auto p-3 sm:p-4 space-y-3">
+      <!-- Cart items will be rendered here -->
+    </div>
+
+    <div class="p-4 sm:p-5 border-t border-rose-soft/50 bg-rose-cream/50">
+      <div class="flex justify-between items-center mb-3 sm:mb-4">
+        <span class="text-text-body font-medium text-sm sm:text-base">Total</span>
+        <span class="font-bold text-lg sm:text-xl text-rose-deep" id="cartTotal">Rp 0</span>
+      </div>
+      <button id="checkoutBtn" class="w-full btn-primary bg-rose-deep text-white py-3 sm:py-4 rounded-xl font-semibold flex items-center justify-center gap-2 focus-ring text-sm sm:text-base">
+        <i data-lucide="message-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+        Checkout via WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- Cart Overlay -->
+  <div id="cartOverlay" class="fixed inset-0 bg-black/40 z-40 opacity-0 pointer-events-none transition-opacity duration-300"></div>
 
   <script>
-    // Product Data with real images from Unsplash
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Product Data
     const products = [
       {
         id: 1,
-        name: 'Pashmina Voal Premium',
-        price: 50000,
-        category: 'Pashmina',
-        description: 'Bahan voal lembut, tidak mudah kusut, jatuh sempurna',
-        colors: ['Dusty Pink', 'Army Green', 'Navy', 'Maroon', 'Mocca'],
+        name: 'Khimar Instant Ceruti Premium',
+        price: 125000,
+        image: 'https://images.unsplash.com/photo-1590651121899-92f3ce089c4c?w=400&h=400&fit=crop',
         badge: 'Best Seller',
-        image: 'https://images.unsplash.com/photo-1631233859262-0d7e8d9d5e8c?w=400&h=400&fit=crop&crop=center'
+        category: 'Khimar'
       },
       {
         id: 2,
-        name: 'Pashmina Ceruty Diamond',
-        price: 55000,
-        category: 'Pashmina',
-        description: 'Ceruty premium dengan motif diamond elegan',
-        colors: ['Peach', 'Tosca', 'Grey', 'Black'],
-        badge: null,
-        image: 'https://images.unsplash.com/photo-1590651121899-92f3ce089c4c?w=400&h=400&fit=crop&crop=center'
+        name: 'Gamis Set Rayon Viscose (Soft Series)',
+        price: 345000,
+        image: 'https://images.unsplash.com/photo-1611042553484-d61f84d22784?w=400&h=400&fit=crop',
+        badge: 'Premium',
+        category: 'Gamis'
       },
       {
         id: 3,
-        name: 'Tunik Setelan A-Line',
-        price: 150000,
-        category: 'Tunik',
-        description: 'Setelan tunik dan celana, bahan premium nyaman dipakai seharian',
-        colors: ['Khaki', 'Navy', 'Grey', 'Black'],
-        badge: 'New',
-        image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&h=400&fit=crop&crop=center'
+        name: 'Pashmina Silk Shimmer',
+        price: 85000,
+        image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&h=400&fit=crop',
+        badge: null,
+        category: 'Hijab'
       },
       {
         id: 4,
-        name: 'Pashmina Crinkle Jersey',
+        name: 'Niqab Bandana Poni (Breathable)',
         price: 45000,
-        category: 'Pashmina',
-        description: 'Jersey crinkle stretchy, praktis dan mudah dibentuk',
-        colors: ['Cream', 'Dusty Blue', 'Sage', 'Terracotta'],
-        badge: null,
-        image: 'https://images.unsplash.com/photo-1611042553484-d61f84d22784?w=400&h=400&fit=crop&crop=center'
+        image: 'https://images.unsplash.com/photo-1631233859262-0d7e8d4b9a8b?w=400&h=400&fit=crop',
+        badge: 'New',
+        category: 'Niqab'
       },
       {
         id: 5,
-        name: 'Tunik Setelan Straight Cut',
-        price: 165000,
-        category: 'Tunik',
-        description: 'Cutting straight modern, cocok untuk kerja atau santai',
-        colors: ['White', 'Navy', 'Black', 'Grey'],
-        badge: 'Premium',
-        image: 'https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&h=400&fit=crop&crop=center'
+        name: 'Inner Ninja Anti Pusing',
+        price: 25000,
+        image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=400&h=400&fit=crop',
+        badge: null,
+        category: 'Aksesoris'
       },
       {
         id: 6,
-        name: 'Pashmina Bella Square',
-        price: 48000,
-        category: 'Pashmina',
-        description: 'Bella square dengan finishing rapi, simpel dan cantik',
-        colors: ['Mocca', 'Dusty Pink', 'Grey', 'Navy'],
-        badge: null,
-        image: 'https://images.unsplash.com/photo-1609709295948-17d77cb2a69b?w=400&h=400&fit=crop&crop=center'
+        name: 'Paket Hemat 3 Hijab Daily',
+        price: 199000,
+        originalPrice: 255000,
+        image: 'https://images.unsplash.com/photo-1609709295948-17d77cb2a69b?w=400&h=400&fit=crop',
+        badge: 'Hemat 22%',
+        category: 'Paket'
       }
     ];
 
-    // Format currency
-    function formatPrice(price) {
+    // Testimonials Data
+    const testimonials = [
+      {
+        name: 'Siti Aisyah',
+        location: 'Jakarta',
+        rating: 5,
+        text: 'Kualitas bahannya luar biasa! Khimar instant-nya nyaman banget dipakai seharian. Bahannya adem dan tidak gerah. Sudah repeat order berkali-kali!',
+        avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
+        product: 'Khimar Instant Ceruti Premium'
+      },
+      {
+        name: 'Dewi Rahmawati',
+        location: 'Bandung',
+        rating: 5,
+        text: 'Gamis rayon-nya jatuhnya sempurna dan bahannya sangat lembut. Jahitannya rapi, worth every penny! Pengiriman juga cepat.',
+        avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
+        product: 'Gamis Set Rayon Viscose'
+      },
+      {
+        name: 'Fatimah Zahra',
+        location: 'Surabaya',
+        rating: 5,
+        text: 'Pashmina silk shimmer-nya cantik banget, warnanya elegant dan tidak kusam. Cocok untuk acara formal maupun casual. Recommended seller!',
+        avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop',
+        product: 'Pashmina Silk Shimmer'
+      }
+    ];
+
+    // FAQ Data
+    const faqs = [
+      {
+        question: 'Berapa lama proses pengiriman?',
+        answer: 'Pengiriman membutuhkan waktu 1-3 hari kerja untuk area JABODETABEK dan 3-7 hari kerja untuk luar JABODETABEK. Kami menggunakan jasa kurir terpercaya seperti JNE, J&T, dan SiCepat.'
+      },
+      {
+        question: 'Apakah bisa request warna atau ukuran tertentu?',
+        answer: 'Tentu! Kami menyediakan berbagai pilihan warna dan ukuran. Silakan hubungi kami via WhatsApp untuk mengecek ketersediaan warna dan ukuran yang Anda inginkan.'
+      },
+      {
+        question: 'Bagaimana cara melakukan penukaran atau pengembalian?',
+        answer: 'Kami menerima penukaran dalam waktu 7 hari setelah barang diterima dengan syarat barang dalam kondisi belum digunakan dan masih memiliki tag. Hubungi CS kami untuk proses lebih lanjut.'
+      },
+      {
+        question: 'Apakah tersedia grosir atau reseller?',
+        answer: 'Ya, kami membuka kesempatan untuk reseller dan grosir dengan harga spesial. Silakan hubungi kami via WhatsApp untuk informasi lebih lanjut mengenai syarat dan ketentuan.'
+      },
+      {
+        question: 'Metode pembayaran apa saja yang tersedia?',
+        answer: 'Kami menerima pembayaran via Transfer Bank (BCA, Mandiri, BNI, BRI), E-Wallet (GoPay, OVO, Dana), dan COD untuk area tertentu.'
+      }
+    ];
+
+    // Cart State
+    let cart = [];
+
+    // Format Currency
+    function formatCurrency(amount) {
       return new Intl.NumberFormat('id-ID', {
         style: 'currency',
         currency: 'IDR',
         minimumFractionDigits: 0,
         maximumFractionDigits: 0
-      }).format(price);
+      }).format(amount);
     }
 
-    // Generate WhatsApp link
-    function getWALink(product) {
-      const message = encodeURIComponent(`Halo Kak, saya ingin pesan:\n\nProduk: ${product.name}\nHarga: ${formatPrice(product.price)}\n\nMohon info ketersediaan dan warna. Terima kasih!`);
-      return `https://wa.me/6282332251041?text=${message}`;
-    }
-
-    // Render products
+    // Render Products
     function renderProducts() {
-      const grid = document.getElementById('product-grid');
-      if (!grid) return;
-
-      products.forEach((product, index) => {
-        const card = document.createElement('div');
-        card.className = 'scroll-reveal product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-amber-100';
-        card.innerHTML = `
-          <div class="product-img-wrapper relative aspect-square overflow-hidden bg-amber-50">
-            ${product.badge ? `<span class="absolute top-3 left-3 z-10 badge text-amber-900 text-xs font-semibold px-3 py-1 rounded-full">${product.badge}</span>` : ''}
-            <img 
-              src="${product.image}" 
-              alt="${product.name}"
-              class="product-image w-full h-full"
-              loading="lazy"
-              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=400&fit=crop&crop=center';"
-            />
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = products.map((product, index) => `
+        <div class="product-card bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-rose-soft/30 group" data-aos="fade-up" data-aos-delay="${index * 100}">
+          <div class="relative overflow-hidden aspect-square">
+            <img src="${product.image}" alt="${product.name}" class="product-image w-full h-full object-cover">
+            ${product.badge ? `
+              <span class="absolute top-3 left-3 px-3 py-1 bg-rose-deep text-white text-xs font-semibold rounded-full">
+                ${product.badge}
+              </span>
+            ` : ''}
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <button onclick="addToCart(${product.id})" class="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-sm text-rose-deep py-2.5 sm:py-3 rounded-xl font-semibold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2 hover:bg-rose-primary hover:text-white focus-ring text-sm">
+              <i data-lucide="plus" class="w-4 h-4"></i>
+              Tambah ke Keranjang
+            </button>
           </div>
           <div class="p-4 sm:p-5">
-            <span class="text-amber-500 text-xs font-medium uppercase tracking-wide">${product.category}</span>
-            <h4 class="font-semibold text-amber-900 text-base sm:text-lg mt-1 mb-1 leading-tight">${product.name}</h4>
-            <p class="text-amber-600 text-sm mb-3 line-clamp-2">${product.description}</p>
-            <div class="flex flex-wrap gap-1 mb-3">
-              ${product.colors.slice(0, 3).map(color => `<span class="text-xs text-amber-500 bg-amber-50 px-2 py-0.5 rounded">${color}</span>`).join('')}
-              ${product.colors.length > 3 ? `<span class="text-xs text-amber-400">+${product.colors.length - 3}</span>` : ''}
-            </div>
-            <div class="flex items-center justify-between gap-3">
-              <span class="font-bold text-amber-700 text-lg">${formatPrice(product.price)}</span>
-              <a href="${getWALink(product)}" target="_blank" rel="noopener noreferrer" 
-                 class="btn-wa text-white text-sm font-medium px-4 py-2 rounded-full flex items-center gap-1.5 focus-ring whitespace-nowrap"
-                 aria-label="Pesan ${product.name} via WhatsApp">
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-                Pesan
-              </a>
+            <span class="text-xs text-rose-primary font-medium uppercase tracking-wider">${product.category}</span>
+            <h3 class="font-semibold text-text-dark mt-1 mb-2 text-sm sm:text-base line-clamp-2">${product.name}</h3>
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="font-bold text-base sm:text-lg text-rose-deep">${formatCurrency(product.price)}</span>
+                ${product.originalPrice ? `
+                  <span class="text-xs sm:text-sm text-text-light line-through ml-2">${formatCurrency(product.originalPrice)}</span>
+                ` : ''}
+              </div>
             </div>
           </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    // Render Testimonials
+    function renderTestimonials() {
+      const grid = document.getElementById('testimonialGrid');
+      grid.innerHTML = testimonials.map((testimonial, index) => `
+        <div class="testimonial-card bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 shadow-lg border border-rose-soft/30" data-aos="fade-up" data-aos-delay="${index * 100}">
+          <div class="flex items-center gap-1 mb-3 sm:mb-4">
+            ${Array(testimonial.rating).fill().map(() => `
+              <i data-lucide="star" class="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 fill-amber-400"></i>
+            `).join('')}
+          </div>
+          <p class="text-text-body text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">"${testimonial.text}"</p>
+          <div class="flex items-center gap-3 sm:gap-4">
+            <img src="${testimonial.avatar}" alt="${testimonial.name}" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-rose-soft">
+            <div>
+              <h4 class="font-semibold text-text-dark text-sm sm:text-base">${testimonial.name}</h4>
+              <p class="text-text-light text-xs sm:text-sm">${testimonial.location}</p>
+            </div>
+          </div>
+          <div class="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-rose-soft/30">
+            <p class="text-xs sm:text-sm text-text-light">Membeli: <span class="text-rose-primary font-medium">${testimonial.product}</span></p>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    // Render FAQ
+    function renderFAQ() {
+      const container = document.getElementById('faqContainer');
+      container.innerHTML = faqs.map((faq, index) => `
+        <div class="faq-item bg-white rounded-xl sm:rounded-2xl border border-rose-soft/50 overflow-hidden" data-aos="fade-up" data-aos-delay="${index * 50}">
+          <button onclick="toggleFAQ(this)" class="w-full p-4 sm:p-6 text-left flex items-center justify-between gap-4 focus-ring" aria-expanded="false">
+            <span class="font-semibold text-text-dark text-sm sm:text-base">${faq.question}</span>
+            <i data-lucide="chevron-down" class="faq-icon w-4 h-4 sm:w-5 sm:h-5 text-rose-primary flex-shrink-0"></i>
+          </button>
+          <div class="faq-content">
+            <p class="px-4 sm:px-6 pb-4 sm:pb-6 text-text-body text-sm sm:text-base leading-relaxed">${faq.answer}</p>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    // Toggle FAQ
+    function toggleFAQ(button) {
+      const item = button.closest('.faq-item');
+      const isActive = item.classList.contains('active');
+      
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      
+      // Open clicked if wasn't active
+      if (!isActive) {
+        item.classList.add('active');
+      }
+      
+      button.setAttribute('aria-expanded', !isActive);
+    }
+
+    // Add to Cart
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      if (!product) return;
+
+      const existingItem = cart.find(item => item.id === productId);
+      
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ ...product, quantity: 1 });
+      }
+
+      updateCartUI();
+      showCart();
+      
+      // Animate cart badge
+      const badge = document.getElementById('cartCount');
+      badge.classList.remove('cart-bounce');
+      void badge.offsetWidth;
+      badge.classList.add('cart-bounce');
+    }
+
+    // Update Cart UI
+    function updateCartUI() {
+      const cartCount = document.getElementById('cartCount');
+      const cartItemCount = document.getElementById('cartItemCount');
+      const cartItems = document.getElementById('cartItems');
+      const cartTotal = document.getElementById('cartTotal');
+
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+      cartCount.textContent = totalItems;
+      cartItemCount.textContent = `${totalItems} item`;
+      cartTotal.textContent = formatCurrency(totalPrice);
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = `
+          <div class="text-center py-8">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-rose-blush flex items-center justify-center">
+              <i data-lucide="shopping-bag" class="w-8 h-8 text-rose-muted"></i>
+            </div>
+            <p class="text-text-light">Keranjang masih kosong</p>
+            <p class="text-text-light text-sm mt-1">Mulai belanja sekarang!</p>
+          </div>
         `;
-        grid.appendChild(card);
-      });
+      } else {
+        cartItems.innerHTML = cart.map(item => `
+          <div class="flex gap-3 sm:gap-4 p-3 bg-rose-cream/50 rounded-xl">
+            <img src="${item.image}" alt="${item.name}" class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover">
+            <div class="flex-1 min-w-0">
+              <h4 class="font-medium text-text-dark text-sm line-clamp-2">${item.name}</h4>
+              <p class="text-rose-primary font-semibold text-sm mt-1">${formatCurrency(item.price)}</p>
+              <div class="flex items-center gap-2 mt-2">
+                <button onclick="updateQuantity(${item.id}, -1)" class="qty-btn w-7 h-7 rounded-lg bg-white border border-rose-soft flex items-center justify-center hover:bg-rose-soft transition-colors focus-ring">
+                  <i data-lucide="minus" class="w-3 h-3"></i>
+                </button>
+                <span class="w-8 text-center font-semibold text-sm">${item.quantity}</span>
+                <button onclick="updateQuantity(${item.id}, 1)" class="qty-btn w-7 h-7 rounded-lg bg-white border border-rose-soft flex items-center justify-center hover:bg-rose-soft transition-colors focus-ring">
+                  <i data-lucide="plus" class="w-3 h-3"></i>
+                </button>
+                <button onclick="removeFromCart(${item.id})" class="ml-auto p-1.5 text-text-light hover:text-red-500 transition-colors focus-ring rounded" aria-label="Hapus item">
+                  <i data-lucide="trash-2" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+      
+      lucide.createIcons();
     }
 
-    // Scroll reveal with IntersectionObserver
-    function initScrollReveal() {
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-      };
+    // Update Quantity
+    function updateQuantity(productId, delta) {
+      const item = cart.find(i => i.id === productId);
+      if (!item) return;
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add('revealed');
-            }, index * 100);
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
+      item.quantity += delta;
+      
+      if (item.quantity <= 0) {
+        cart = cart.filter(i => i.id !== productId);
+      }
 
-      document.querySelectorAll('.scroll-reveal').forEach(el => {
-        observer.observe(el);
-      });
+      updateCartUI();
     }
 
-    // Smooth scroll for anchor links
-    function initSmoothScroll() {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-        });
-      });
+    // Remove from Cart
+    function removeFromCart(productId) {
+      cart = cart.filter(i => i.id !== productId);
+      updateCartUI();
     }
+
+    // Show Cart
+    function showCart() {
+      const floatingCart = document.getElementById('floatingCart');
+      const overlay = document.getElementById('cartOverlay');
+      
+      floatingCart.classList.remove('hidden-cart');
+      overlay.classList.remove('opacity-0', 'pointer-events-none');
+      overlay.classList.add('opacity-100');
+    }
+
+    // Hide Cart
+    function hideCart() {
+      const floatingCart = document.getElementById('floatingCart');
+      const overlay = document.getElementById('cartOverlay');
+      
+      floatingCart.classList.add('hidden-cart');
+      overlay.classList.add('opacity-0', 'pointer-events-none');
+      overlay.classList.remove('opacity-100');
+    }
+
+    // Checkout via WhatsApp
+    function checkout() {
+      if (cart.length === 0) return;
+
+      let message = 'Assalamualaikum, saya ingin memesan:\n\n';
+      
+      cart.forEach((item, index) => {
+        message += `${index + 1}. ${item.name}\n`;
+        message += `   Qty: ${item.quantity} x ${formatCurrency(item.price)}\n\n`;
+      });
+
+      const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      message += `Total: ${formatCurrency(total)}\n\n`;
+      message += 'Mohon konfirmasi ketersediaan dan ongkir. Terima kasih!';
+
+      const encodedMessage = encodeURIComponent(message);
+      window.open(`https://wa.me/628123456789?text=${encodedMessage}`, '_blank');
+    }
+
+    // Event Listeners
+    document.getElementById('cartToggle').addEventListener('click', showCart);
+    document.getElementById('closeCart').addEventListener('click', hideCart);
+    document.getElementById('cartOverlay').addEventListener('click', hideCart);
+    document.getElementById('checkoutBtn').addEventListener('click', checkout);
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-up');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
 
     // Initialize
     document.addEventListener('DOMContentLoaded', () => {
       renderProducts();
-      initScrollReveal();
-      initSmoothScroll();
+      renderTestimonials();
+      renderFAQ();
+      updateCartUI();
+
+      // Observe elements for scroll animations
+      document.querySelectorAll('.product-card, .testimonial-card, .faq-item').forEach(el => {
+        observer.observe(el);
+      });
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        hideCart();
+      }
     });
   </script>
 </body>
